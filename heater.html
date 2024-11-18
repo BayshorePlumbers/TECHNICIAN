@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <title>WATER HEATER BIDDING CALCULATOR - BAYSHORE PLUMBERS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<h1>WATER HEATER BIDDING CALCULATOR - BAYSHORE PLUMBERS</h1>
+<div class="logo-container">
+    <img src="BP.png" alt="BP" class="logo">
+</div>
+<div class="container">
+    <div class="calculator">
+        <form id="biddingForm">
+            <div class="column">
+                <label for="et">ESTIMATED TIME:</label>
+                <input type="number" id="et" name="et" min="0" step="0.1" placeholder="Enter Estimated Time">
+                <br>
+
+                <label for="material">MATERIAL EXPENSES:</label>
+                <input type="number" id="material" name="material" placeholder="Enter Estimated MATERIAL EXPENSES" min="0">
+                <br>
+
+                <label for="am">ADDITIONAL MANPOWER:</label>
+                <input type="number" id="am" name="am" placeholder="Enter Additional Manpower" min="0">
+                <br>
+            </div>
+            <div class="column">
+                <label for="others">OTHER EXPENSES:</label>
+                <input type="number" id="others" name="others" placeholder="Enter OTHER Expenses (If Any)" min="0">
+                <br>
+
+                <label for="discount">DISCOUNTS:</label>
+                <select id="discount" name="discount">
+                    <option value="no discount">NO DISCOUNT</option>
+                    <option value="5%">5 Percent</option>
+                    <option value="10%">10 Percent</option>
+                </select>
+                <br>
+
+                <label for="permits">PERMITS REQUIRED:</label>
+                <input type="checkbox" id="permits" name="permits">
+                <br>
+
+                <label for="financing">FINANCING OPTION:</label>
+                <select id="financing" name="financing">
+                    <option value="none">None</option>
+                    <option value="2832">Plan 2832</option>
+                    <option value="2611">Plan 2611</option>
+                    <option value="9998">Plan 9998</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="afterHours">AFTER HOURS:</label>
+                <input type="checkbox" id="afterHours" name="afterHours">
+            </div>
+            
+            <div class="output-group">
+                Final Bidding Price: <span id="finalPrice">0.00</span>
+                <div id="breakdown"></div>
+            </div>
+            <button type="button" id="calculateBtn">Calculate Final Bidding Price</button>
+        </form>
+    </div>
+</div>
+
+<script src="heaterscript.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+</body>
+</html>

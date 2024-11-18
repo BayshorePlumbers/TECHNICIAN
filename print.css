@@ -1,0 +1,80 @@
+@media print {
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0.5in;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    /* Strict logo styling to ensure consistent print sizing */
+    .container .logo-container img.logo {
+        width: 40px !important;
+        height: auto !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        object-fit: contain !important; /* Keeps logo proportions */
+        display: block !important;
+        margin: 0 auto !important;
+        page-break-inside: avoid !important; /* Avoids page break within logo */
+    }
+
+    h1, h2 {
+        text-align: center;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #000;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .output-group {
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    /* Managerial Assistance Button Styles for Print (Black & White) */
+    #managerialAssistanceBtn.assisted {
+        background: white;
+        color: black;
+        border: 2px dashed black; /* Dashed border for Assisted Sale */
+        font-weight: bold;
+    }
+
+    #managerialAssistanceBtn.non-assisted {
+        background: white;
+        color: black;
+        border: 2px solid black; /* Solid border for Non-Assisted Sale */
+        font-weight: bold;
+    }
+
+    /* Hide buttons and interactive elements */
+    .button-container, 
+    #commissionForm input[type=button], 
+    #commissionForm button {
+        display: none;
+    }
+
+    @page {
+        margin: 0.5in;
+    }
+}
