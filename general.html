@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <title>GENERAL BIDDING CALCULATOR - BAYSHORE PLUMBERS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<h1>GENERAL BIDDING CALCULATOR - BAYSHORE PLUMBERS</h1>
+<div class="logo-container">
+    <img src="BP.png" alt="BP" class="logo">
+</div>
+<div class="container">
+    <div class="calculator">
+        <form>
+            <div class="column">
+                <label for="pdu">PROJECT DURATION UNIT:</label>
+                <select id="pdu" name="pdu">
+                    <option value="days">DAYS</option>
+                    <option value="hours">HOURS</option>
+                </select>
+                <br>
+
+                <label for="epd">ESTIMATED PROJECT DURATION:</label>
+                <input type="number" id="epd" name="epd" placeholder="Enter Estimated PROJECT DURATION" min="0" step="0.1">
+                <br>
+
+                <label for="material">MATERIAL EXPENSES:</label>
+                <input type="number" id="material" name="material" placeholder="Enter Estimated MATERIAL EXPENSES" min="0">
+                <br>
+
+                <label for="rentals">RENTAL EXPENSES:</label>
+                <input type="number" id="rentals" name="rentals" placeholder="Enter Estimated RENTAL EXPENSES" min="0">
+                <br>
+            </div>
+            <div class="column">
+                <label for="mac">MACHINERY/ EQUIPMENT:</label>
+                <select id="mac" name="mac">
+                    <option value="0">NONE</option>
+                    <option value="eb">EXCAVATOR BIG</option>
+                    <option value="es">EXCAVATOR SMALL</option>
+                    <option value="bc">BOB CAT/ SKID STEER</option>
+                    <option value="hydro">HYDRO TRUCK</option>
+                    <option value="dump">DUMP TRUCK</option>
+                    <option value="tp">TRENCH PLATES</option>
+                    <option value="vr">VIBRATING ROLLER</option>
+                    <option value="tmac">TRENCHLESS MACHINE</option>
+                    <option value="shoring">SHORING</option>
+                </select>
+                <br>
+
+                <label for="am">NUMBER OF LABORS REQUIRED:</label>
+                <input type="number" id="am" name="am" placeholder="Enter NUMBERS OF LABORS REQUIRED" min="0">
+                <br>
+
+                <label for="permits">PERMITS:</label>
+                <div id="permits" name="permits" multiple>
+                    <label><input type="checkbox" name="permits" value="building">BUILDING PERMIT</label><br>
+                    <label><input type="checkbox" name="permits" value="sewer">SEWER PERMIT</label><br>
+                    <label><input type="checkbox" name="permits" value="encroachment">ENCROACHMENT PERMIT</label><br>
+                </div>
+                <br>
+
+                <label for="discount">DISCOUNTS:</label>
+                <select id="discount" name="discount">
+                    <option value="no discount">NO DISCOUNT</option>
+                    <option value="5%">5 Percent</option>
+                    <option value="10%">10 Percent</option>
+                </select>
+                <br>
+
+                <label for="financing">FINANCING OPTION:</label>
+                <select id="financing" name="financing">
+                    <option value="none">None</option>
+                    <option value="2832">Plan 2832</option>
+                    <option value="2611">Plan 2611</option>
+                    <option value="9998">Plan 9998</option>
+                </select>
+                <br>
+            </div>
+            <div class="row">
+                <label for="afterHours">AFTER HOURS:</label>
+                <input type="checkbox" id="afterHours" name="afterHours">
+            </div>
+            <div class="output-group">
+                Final Bidding Price: <span id="finalPrice">0.00</span>
+                <div id="breakdown"></div>
+            </div>
+            <button type="button" id="calculateBtn">Calculate Final Bidding Price</button>
+        </form>
+    </div>
+</div>
+
+<script src="generalscript.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <title>BAYSHORE PLUMBERS - PERMITS LIST</title>
+    <h1>BAYSHORE PLUMBERS - PERMITS LIST</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="matlook.css">
+
+    <script>
+        const permitsData = [
+            {
+                "Ln#": 1,
+                "Description": "Traffic Control Plan (TCP)",
+                "Price": 311.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/TCP.jpg"
+            },
+            {
+                "Ln#": 2,
+                "Description": "West Bay Sewer",
+                "Price": 490.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/WBS.jpg"
+            },
+            {
+                "Ln#": 3,
+                "Description": "Fair Oaks Sewer",
+                "Price": 300.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/FOS.jpg"
+            },
+            {
+                "Ln#": 4,
+                "Description": "Menlo Park Encroachment Permit",
+                "Price": 692.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MPEP.jpg"
+            },
+            {
+                "Ln#": 5,
+                "Description": "Menlo Park Building Permit",
+                "Price": 160.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MPBP.jpg"
+            },
+            {
+                "Ln#": 6,
+                "Description": "Palo Alto Building Permit",
+                "Price": 450.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/PABP.jpg"
+            },
+            {
+                "Ln#": 7,
+                "Description": "Palo Alto Street Permit",
+                "Price": 850.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/PASP.jpg"
+            },
+            {
+                "Ln#": 8,
+                "Description": "Atherton Building Permit",
+                "Price": 315.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/ABP.jpg"
+            },
+            {
+                "Ln#": 9,
+                "Description": "Atherton Encroachment Permit",
+                "Price": 2550.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/AEP.jpg"
+            },
+            {
+                "Ln#": 10,
+                "Description": "Atherton REFUNDABLE Deposit",
+                "Price": 2500.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/ARD.jpg"
+            },
+            {
+                "Ln#": 11,
+                "Description": "Redwood City Building Permit",
+                "Price": 190.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/RCBP.jpg"
+            },
+            {
+                "Ln#": 12,
+                "Description": "Redwood City Encroachment Permit",
+                "Price": 3000.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/RCEP.jpg"
+            },{
+                "Ln#": 13,
+                "Description": "Portola Valley Building Permit",
+                "Price": 433.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/PVBP.jpg"
+            },
+            {
+                "Ln#": 14,
+                "Description": "Portola Valley Encroachment Permit",
+                "Price": 943.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/PVEP.jpg"
+            },
+            {
+                "Ln#": 15,
+                "Description": "Town of Woodside Building Permit",
+                "Price": 500.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/TWBP.jpg"
+            },
+            {
+                "Ln#": 16,
+                "Description": "Town of Woodside Encroachment Permit",
+                "Price": 1300.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/TWEP.jpg"
+            },
+            {
+                "Ln#": 17,
+                "Description": "Millbrae Buiding Permit",
+                "Price": 670.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MBP.jpg"
+            },
+            {
+                "Ln#": 18,
+                "Description": "Millbrae Encroachment Permit",
+                "Price": 3400.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MEP.jpg"
+            },
+            {
+                "Ln#": 19,
+                "Description": "San Carlos Building Permit",
+                "Price": 435.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/SCBP.jpg"
+            },
+            {
+                "Ln#": 20,
+                "Description": "San Carlos Street Permit",
+                "Price": 575.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/SCSP.jpg"
+            },{
+                "Ln#": 21,
+                "Description": "Belmont Building Permit",
+                "Price": 350.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/BBP.jpg"
+            },
+            {
+                "Ln#": 22,
+                "Description": "Belmont Encroachment Permit",
+                "Price": 1250.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/BEP.jpg"
+            },
+            {
+                "Ln#": 23,
+                "Description": "Belmont Security Deposit",
+                "Price": 600.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/BSD.jpg"
+            },
+            {
+                "Ln#": 24,
+                "Description": "Mountain View Building Permit",
+                "Price": 300.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MVBP.jpg"
+            },
+            {
+                "Ln#": 25,
+                "Description": "Mountain View Encroachment Permit",
+                "Price": 1465.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/MVEP.jpg"
+            },
+            {
+                "Ln#": 26,
+                "Description": "CITY of SAN MATEO Building Permit",
+                "Price": 300.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/CSMBP.jpg"
+            },
+            {
+                "Ln#": 27,
+                "Description": "CITY of SAN MATEO Encroachment Permit",
+                "Price": 950.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/CSMEP.jpg"
+            },
+            {
+                "Ln#": 28,
+                "Description": "CITY of SAN MATEO Security Deposit",
+                "Price": 3000.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/CSMSD.jpg"
+            },{
+                "Ln#": 29,
+                "Description": "COUNTY of SAN MATEO Building Permit",
+                "Price": 250.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/CoSMBP.jpg"
+            },
+            {
+                "Ln#": 30,
+                "Description": "COUNTY of SAN MATEO Encroachment Permit",
+                "Price": 550.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/CoSMEP.jpg"
+            },
+            {
+                "Ln#": 31,
+                "Description": "Santa Clara Building Permit",
+                "Price": 250.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/StCBP.jpg"
+            },
+            {
+                "Ln#": 32,
+                "Description": "Santa Clara Encroachment Permit",
+                "Price": 815.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/StCEP.jpg"
+            },
+            {
+                "Ln#": 33,
+                "Description": "Hillsborough Building Permit",
+                "Price": 255.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/HBBP.jpg"
+            },
+            {
+                "Ln#": 34,
+                "Description": "Hillsborough Encroachment Permit",
+                "Price": 1463.00,
+                "Qty": 1,
+                "Unit": "Permit",
+                "ImageURL": "Permit Images/HBEP.jpg"
+            },
+            ];
+
+const permitsPerPage = 25;
+let currentPage = 1;
+let cart = [];
+
+function displayPermits(page, permits = permitsData) {
+    const permitsContainer = document.getElementById('permits-container'); // Matches the updated ID
+    const startIndex = (page - 1) * permitsPerPage;
+    const endIndex = Math.min(startIndex + permitsPerPage, permits.length);
+    const permitsToShow = permits.slice(startIndex, endIndex);
+
+    permitsContainer.innerHTML = ''; 
+
+    permitsToShow.forEach(permit => {
+        const permitDiv = document.createElement('div');
+        permitDiv.classList.add('permit'); // Matches the class in matlook.css
+
+        const img = document.createElement('img');
+        img.src = permit.ImageURL;
+        img.alt = permit.Description;
+        permitDiv.appendChild(img);
+
+        const detailsDiv = document.createElement('div');
+        detailsDiv.classList.add('details');
+        detailsDiv.innerHTML = `
+            <p><strong>Description: ${permit.Description}</strong></p>
+            <p>Price: $${permit.Price.toFixed(2)}</p>
+            <p>Quantity: ${permit.Qty} ${permit.Unit}</p>
+        `;
+        permitDiv.appendChild(detailsDiv);
+
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.classList.add('add-to-cart'); // Matches button style
+        addToCartBtn.textContent = 'Add to Cart';
+        addToCartBtn.addEventListener('click', () => addToCart(permit));
+        permitDiv.appendChild(addToCartBtn);
+
+        permitsContainer.appendChild(permitDiv);
+    });
+
+    displayPagination(permits.length); // Call pagination function
+}
+
+function displayPagination(totalPermits) {
+    const totalPages = Math.ceil(totalPermits / permitsPerPage);
+    const paginationContainers = document.querySelectorAll('.pagination-container'); // Match class name
+
+    paginationContainers.forEach(container => {
+        container.innerHTML = ''; // Clear existing pagination buttons
+
+        // Previous Button
+        const prevButton = document.createElement('button');
+        prevButton.textContent = 'Previous';
+        prevButton.classList.add('pagination-button', 'prev-next-btn');
+        if (currentPage === 1) prevButton.disabled = true; // Disable on the first page
+
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPermits(currentPage);
+                displayPagination(totalPermits);
+            }
+        });
+        container.appendChild(prevButton);
+
+        // Page Number Buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i;
+            pageButton.classList.add('pagination-button');
+            if (i === currentPage) {
+                pageButton.classList.add('active'); // Highlight the current page
+            }
+
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayPermits(currentPage);
+                displayPagination(totalPermits);
+            });
+
+            container.appendChild(pageButton);
+        }
+
+        // Next Button
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Next';
+        nextButton.classList.add('pagination-button', 'prev-next-btn');
+        if (currentPage === totalPages) nextButton.disabled = true; // Disable on the last page
+
+        nextButton.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayPermits(currentPage);
+                displayPagination(totalPermits);
+            }
+        });
+        container.appendChild(nextButton);
+    });
+}
+
+function searchPermits() {
+    const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
+    const filteredPermits = permitsData.filter(permit =>
+        permit.Description.toLowerCase().includes(searchInput)
+    );
+    currentPage = 1;
+    displayPermits(currentPage, filteredPermits);
+}
+
+function addToCart(item) {
+    const quantity = 1;
+    const price = item.Price;
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.Description === item.Description);
+
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push({ Description: item.Description, quantity, price });
+    }
+    updateCartItemCount();
+    saveCartToStorage();
+    broadcastCartUpdate();
+}
+
+function loadCartFromStorage() {
+    const storedCart = sessionStorage.getItem('cart');
+    if (storedCart) cart = JSON.parse(storedCart);
+    updateCartItemCount();
+}
+
+function saveCartToStorage() {
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function updateCartItemCount() {
+    const cartCounter = document.getElementById('cart-counter');
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCounter.textContent = totalItems;
+}
+
+function goToCart() {
+    window.location.href = "cart.html";
+}
+
+function broadcastCartUpdate() {
+    window.dispatchEvent(new Event('storage'));
+}
+
+window.onload = function () {
+    loadCartFromStorage();
+    displayPermits(currentPage);
+    updateCartItemCount();
+
+    // Add event listener to trigger search on input change
+    document.getElementById('search-input').addEventListener('input', searchPermits);
+};
+
+window.addEventListener('storage', function (event) {
+    if (event.key === 'cart') {
+        loadCartFromStorage();
+        updateCartItemCount();
+    }
+});
+</script>
+</head>
+<body>
+<div class="header-container">
+<header class="navbar">
+<div class="nav-logo border cart-logo"><div class="logo"></div></div>
+<div class="nav-search">
+    <select class="search-select" id="category-select">
+        <option value="ALL">ALL</option>
+        <option value="abs">ABS</option>
+        <option value="sdr17">SDR17</option>
+    </select>
+    <input placeholder="Search Bayshore Plumbers Permits List" class="search-input" id="search-input">
+    <div class="search-icon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+</div>
+<div class="cart-icon" onclick="goToCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-counter" class="cart-counter">0</span>
+</div>
+</header>
+</div>
+
+
+
+    <!-- Top Pagination -->
+    <div class="pagination pagination-container" id="top-pagination-container"></div>
+
+    <!-- Permit container -->
+    <div class="container" id="permits-container"></div>
+  
+    <!-- Bottom Pagination -->
+    <div class="pagination pagination-container" id="bottom-pagination-container"></div>
+  
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+</body>
+</html>

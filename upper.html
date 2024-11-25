@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <title>UPPER SEWER LATERAL PROJECT BIDDING CALCULATOR - BAYSHORE PLUMBERS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+<header>
+    <h1>UPPER SEWER LATERAL PROJECT BIDDING CALCULATOR - BAYSHORE PLUMBERS</h1>
+    <div class="logo-container">
+        <img src="BP.png" alt="BP" class="logo">
+    </div>
+</header>
+
+<div class="container">
+    <div class="calculator">
+        <form id="biddingForm">
+            <div class="column">
+                <!-- First column of inputs -->
+                <label for="ed">ESTIMATED DAYS:</label>
+                <input type="number" id="ed" name="ed" min="0" step="0.1" placeholder="Enter Estimated Days">
+
+                <label for="method">REPLACEMENT/ INSTALLATION METHOD:</label>
+                <select id="method" name="method">
+                    <option value="open trench">OPEN TRENCH</option>
+                    <option value="trenchless">TRENCHLESS</option>
+                </select>
+
+                <label for="am">ADDITIONAL MANPOWER:</label>
+                <select id="am" name="am">
+                    <option value="1d">1 DAY</option>
+                    <option value="2d">2 DAYS</option>
+                    <option value="3d">3 DAYS</option>
+                    <option value="nr">NOT REQUIRED</option>
+                </select>
+
+                <label for="swr">SIDEWALK REPAIR REQUIRED:</label>
+                <input type="checkbox" id="swr" name="swr">
+                <br>
+            </div>
+
+            <div class="column">
+                <!-- Second column of inputs -->
+                <label for="landscape">LANDSCAPE:</label>
+                <select id="landscape" name="landscape">
+                    <option value="dirt">DIRT</option>
+                    <option value="pavers">PAVERS</option>
+                    <option value="asphalt">ASPHALT</option>
+                    <option value="concrete">CONCRETE</option>
+                </select>
+
+                <label for="bm">BACKFILL MATERIAL:</label>
+                <select id="bm" name="bm">
+                    <option value="native soil">NATIVE SOIL</option>
+                    <option value="base rock">BASE ROCK</option>
+                </select>
+
+                <label for="pb">PIPE BEDDING:</label>
+                <select id="pb" name="pb">
+                    <option value="native soil">NATIVE SOIL</option>
+                    <option value="crushed rock">CRUSHED ROCK</option>
+                    <option value="sand">SAND</option>
+                </select>
+
+                <label for="permits">PERMITS:</label>
+                <select id="permits" name="permits">
+                    <option value="none">NONE</option>
+                    <option value="building">BUILDING PERMIT</option>
+                    <option value="sidewalk">SIDEWALK PERMIT</option>
+                    <option value="sewer">SEWER PERMIT</option>
+                    <option value="bas">BUILDING & SEWER PERMIT</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <!-- Third column of inputs -->
+                <label for="depth">DEPTH:</label>
+                <input type="number" id="depth" name="depth" placeholder="How much is the depth?" min="0">
+
+                <label for="others">OTHER EXPENSES:</label>
+                <input type="number" id="others" name="others" placeholder="Enter OTHER Expenses (If Any)" min="0">
+
+                <label for="discount">DISCOUNTS:</label>
+                <select id="discount" name="discount">
+                    <option value="no discount">NO DISCOUNT</option>
+                    <option value="5%">5 Percent</option>
+                    <option value="10%">10 Percent</option>
+                </select>
+
+                <label for="dumping">DUMPING (YARDS):</label>
+                <input type="number" id="dumping" name="dumping" placeholder="Enter AMOUNT OF DUMPING MATERIAL (in YARDS)" min="0">
+
+                <label for="financing">FINANCING OPTION:</label>
+                <select id="financing" name="financing">
+                    <option value="none">None</option>
+                    <option value="2832">Plan 2832</option>
+                    <option value="2611">Plan 2611</option>
+                    <option value="9998">Plan 9998</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="afterHours">AFTER HOURS:</label>
+                <input type="checkbox" id="afterHours" name="afterHours">
+            </div>
+
+            <div class="output-group">
+                <label for="finalPrice">FINAL BIDDING PRICE:</label>
+                <span id="finalPrice">$0.00</span>
+                <div id="breakdown"></div>
+            </div>
+
+            <button type="button" id="calculateBtn">CALCULATE</button>
+        </form>
+    </div>
+</div>
+
+<script src="upperscript.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+</body>
+</html>

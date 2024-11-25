@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.emailjs.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; frame-src 'self' https://drive.google.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>BAYSHORE GENERAL ENGINEERING Inc. dba BAYSHORE PLUMBERS</title>
+    <style>
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BAYSHORE PLUMBERS FINANCING OPTIONS</h1>
+        <h2>Financing Partner - GreenSky</h2>
+        <div class="logo-container">
+            <img src="BP.png" alt="BP" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <p>Please select the following plans that we offer currently:</p>
+            <br>
+            <div class="file-container">
+                <div class="file-item">
+                    <a href="https://drive.google.com/file/d/1b9EvVm86ERm0hllnlpq9ny6WDi0hRj8Y/view?usp=share_link" target="_blank">
+                        <img src="Thumbnails/2611.png" alt="GREENSKY Plan #2611">
+                        <p>GREENSKY 2611</p>
+                    </a>
+                </div>
+                <div class="file-item">
+                    <a href="https://drive.google.com/file/d/14ILdJFQgxtVUkXszc66HEW9XdLLM-s_Q/view?usp=share_link" target="_blank">
+                        <img src="Thumbnails/2832.png" alt="GREENSKY Plan #2832">
+                        <p>GREENSKY 2832</p>
+                    </a>
+                </div>
+                <div class="file-item">
+                    <a href="https://drive.google.com/file/d/1B5POfOMFoq9BbsRImlr6VxuQPHr0PURI/view?usp=share_link" target="_blank">
+                        <img src="Thumbnails/9998.png" alt="GREENSKY Plan #9998">
+                        <p>GREENSKY 9998</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section>
+            <form id="shareForm">
+                <label for="contact">Enter email address:</label><br>
+                <input type="email" id="contact" name="contact" required><br><br>
+
+                <label>Select files to share:</label><br>
+                <input type="checkbox" id="file1" name="files" value="GREENSKY 2611"> GREENSKY 2611<br>
+                <input type="checkbox" id="file2" name="files" value="GREENSKY 2832"> GREENSKY 2832<br>
+                <input type="checkbox" id="file3" name="files" value="GREENSKY 9998"> GREENSKY 9998<br><br>
+
+                <button type="submit">Share</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>For any further information, please visit the <a href="https://www.greensky.com" target="_blank">Greensky Website</a>.</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('W0G6JIZ5yoCoKvZvE');  // Replace if your public key changed
+        })();
+
+        const fileLinks = {
+            'GREENSKY 2611': 'https://drive.google.com/uc?export=download&id=1b9EvVm86ERm0hllnlpq9ny6WDi0hRj8Y',
+            'GREENSKY 2832': 'https://drive.google.com/uc?export=download&id=14ILdJFQgxtVUkXszc66HEW9XdLLM-s_Q',
+            'GREENSKY 9998': 'https://drive.google.com/uc?export=download&id=1B5POfOMFoq9BbsRImlr6VxuQPHr0PURI'
+        };
+
+        document.getElementById('shareForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var contact = document.getElementById('contact').value;
+            var selectedFiles = Array.from(document.querySelectorAll('input[name="files"]:checked')).map(checkbox => checkbox.value);
+
+            if (selectedFiles.length === 0) {
+                alert('Please select at least one file to share.');
+                return;
+            }
+
+            var messageHtml = `
+    Thank you for your interest in Bayshore Plumbers financing options.\n\n
+    You can download the requested PDF files by clicking on the links below:\n\n
+`;
+selectedFiles.forEach(function(file) {
+    messageHtml += `- ${file}: ${fileLinks[file]}\n`;
+});
+messageHtml += `
+    \nIf you have any questions, please contact us @ (650) 323-6464.
+`;
+
+
+
+            var templateParams = {
+                to_email: contact,
+                message_html: messageHtml,
+                selected_files: selectedFiles.join(', ')
+            };
+
+            emailjs.send('service_md766nl', 'template_qi51e88', templateParams)  // Updated Service ID
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Files shared successfully! Please check your email.');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to share files: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;  /* Light grey-blue background for professionalism */
+    color: #222;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;  /* Clean white background for readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #bf3030;  /* Red to align with the logo colors */
+    font-weight: bold;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    max-width: 15%;
+    height: auto;
+}
+
+/* Calculator Layout */
+.calculator {
+    border: 2px solid #003366;  /* Navy border matching the American flag theme */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f0f2f5;  /* Subtle light background */
+    margin-bottom: 20px;
+}
+
+/* Row and Column Layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input and Select Styles */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #ff6600;  /* Bright orange for focus, aligned with button color */
+    outline: none;
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    margin-left: 8px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+/* Standard Button Styles */
+button {
+    background-color: #ff6600;  /* Bright orange for call-to-action */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+    flex: 1;
+}
+
+button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+/* Managerial Assistance Button Color for Screen Display */
+#managerialAssistanceBtn.assisted {
+    background-color: green;
+    color: white;
+}
+
+#managerialAssistanceBtn.non-assisted {
+    background-color: red;
+    color: white;
+}
+
+/* Output Section */
+.output-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.output-group label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Notes Section */
+.notes-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Pay Rates Section */
+.pay-rates-section,
+.office-use-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Columns within Pay Rates & Office Sections */
+.pay-rates-section .column,
+.office-use-section .column {
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
+}
+
+/* File Upload Section */
+.file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.file-item {
+    text-align: center;
+    max-width: 150px;
+}
+
+.file-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.file-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .column {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+}
+.output-group {
+    text-align: left;
+    margin-top: 20px; /* Add space between the Final Price and Estimate Summary */
+}
+
+#breakdown {
+    margin-top: 10px; /* Space between Final Price and Breakdown */
+    padding-left: 5px; /* Adjust padding to align with container */
+    font-size: 14px; /* Adjust font size if necessary */
+    color: #333; /* Optional: Set a color for readability */
+    line-height: 1.5; /* Line height for better readability */
+}

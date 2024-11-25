@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>TECHNICIAN POTENTIAL COMMISSION CALCULATOR - BAYSHORE PLUMBERS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="print.css" type="text/css" media="print">
+</head>
+<body>
+    <div class="container">
+        <h1>TECHNICIAN POTENTIAL COMMISSION CALCULATOR - BAYSHORE PLUMBERS</h1>
+        <div class="logo-container">
+            <img src="BP.png" alt="BP" class="logo">
+        </div>
+        <div class="calculator">
+            <form>
+                <!-- Managerial Assistance Button -->
+                <button id="managerialAssistanceBtn" class="large-button red">NON-ASSISTED SALE</button>
+
+                <div class="row">
+                    <div class="column">
+                        <label for="tn">TECHNICIAN'S NAME:</label>
+                        <input type="text" id="tn" name="tn" placeholder="Enter the Technician's name here">
+                        <label for="in">INVOICE NUMBER:</label>
+                        <input type="text" id="in" name="in" placeholder="Enter the invoice number here">
+                        <label for="tp">TOTAL PRICE:</label>
+                        <input type="number" id="tp" name="tp" placeholder="Enter the final selling price of the job" min="0">
+                        <label for="pd">PROJECT DURATION:</label>
+                        <input type="number" id="pd" name="pd" placeholder="Enter Final Project Duration" min="0">
+                    </div>
+                    <div class="column">
+                        <label for="material">MATERIAL EXPENSES:</label>
+                        <input type="number" id="material" name="material" placeholder="Enter Estimated MATERIAL EXPENSES" min="0">
+                        <label for="ja">JOB ADDRESS:</label>
+                        <input type="text" id="ja" name="ja" placeholder="Enter job address here">
+                        <label for="oe">OTHER EXPENSE:</label>
+                        <input type="number" id="oe" name="oe" placeholder="Enter Other Expenses">
+                        <label for="date">DATE:</label>
+                        <input type="date" id="date" name="date" placeholder="Enter Date">
+                    </div>
+                </div>
+                
+                <div class="row labor-details-row">
+                    <h5>LABOR DETAILS</h5>
+                    <div class="column">
+                        <label for="day1">DAY 1:</label>
+                        <input type="number" id="day1" name="day1" min="0">
+                        <label for="day2">DAY 2:</label>
+                        <input type="number" id="day2" name="day2" min="0">
+                        <label for="day3">DAY 3:</label>
+                        <input type="number" id="day3" name="day3" min="0">
+                        <label for="day4">DAY 4:</label>
+                        <input type="number" id="day4" name="day4" min="0">
+                    </div>
+                    <div class="column">
+                        <label for="day5">DAY 5:</label>
+                        <input type="number" id="day5" name="day5" min="0">
+                        <label for="ah">Additional Hours:</label>
+                        <input type="number" id="ah" name="ah" min="0">
+                        <label for="toh">Total Overtime Hours:</label>
+                        <input type="number" id="toh" name="toh" min="0">
+                        <label for="totalHours">Total Hours:</label>
+                        <input type="number" id="totalHours" name="totalHours" readonly>
+                    </div>
+                </div>
+
+                <div class="row notes-section">
+                    <h5>JOB EXPLANATION & NOTES:</h5>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Enter Notes Here"></textarea>
+                </div>
+
+                <!-- For Office Use Only Section -->
+                <div class="row">
+                    <div class="column">
+                        <h5>FOR OFFICE USE ONLY</h5>
+                    </div>
+                </div>
+                <div class="row office-use-section">
+                    <div class="column">
+                        <label for="sw">SW21/RP21:</label>
+                        <input type="text" id="sw" name="sw" readonly>
+                    </div>
+                    <div class="column">
+                        <label for="wh">WH32:</label>
+                        <input type="text" id="wh" name="wh" readonly>
+                    </div>
+                    <div class="column">
+                        <label for="rd">RD15/UL15:</label>
+                        <input type="text" id="rd" name="rd" readonly>
+                    </div>
+                    <div class="column">
+                        <label for="bpp">BP%:</label>
+                        <input type="text" id="bpp" name="bpp" readonly>
+                    </div>
+                </div>
+                <div class="output-group">
+                    <p>Technician Base Commission: <span id="baseCommission">0.00</span></p>
+                    <p>Kicker: <span id="kicker">0.00</span></p>
+                    <p>Total Commission: <span id="totalCommission">0.00</span></p>
+                    <p id="salesCommissionLabel" style="display: none;">Sales Commission: <span id="salesCommission">0.00</span></p>
+                </div>
+                <div class="row button-container">
+                    <button type="button" id="calculateBtn">Calculate Potential Commission</button>
+                    <button type="button" id="printButton">Print</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal for confirmation before print -->
+        <div id="confirmationModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <p>I HEREBY CONFIRM THAT:<br>
+                    - ALL CONTENTS OF THIS DOCUMENT ARE TRUE AND CORRECT.<br>
+                    - I TAKE FULL RESPONSIBILITY FOR THIS DOCUMENT.
+                </p>
+                <button id="confirmPrintButton">Confirm</button>
+                <button id="cancelPrintButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="techcomscript.js"></script>
+</body>
+</html
